@@ -1,4 +1,4 @@
-AFRAME.registerComponent("create-markers", {
+AFRAME.registerComponent("create-markers", { //estaba mal escrito create-markers
   
     init: async function() {
   
@@ -23,17 +23,17 @@ AFRAME.registerComponent("create-markers", {
         // Añade el modelo a la escena.
         var model = document.createElement("a-entity");    
        
-        model.setAttribute("id", `model-${dish.id}`);
+        model.setAttribute("id", `model-${dish.id}`); //esta mal el guíon -
         model.setAttribute("position", dish.model_geometry.position);
         model.setAttribute("rotation", dish.model_geometry.rotation);
-        model.setAttribute("scale", dish.model_geometry.scale);
+        model.setAttribute("scale", dish.model_geometry.scale); // estaba mal escrito scale
         model.setAttribute("gltf-model", `url(${dish.model_url})`);
-        model.setAttribute("gesture-handler", {});
+        model.setAttribute("gesture-handler", {}); //esta mal el guíon -
         marker.appendChild(model);
   
         // Contenedor de ingredientes.
         var mainPlane = document.createElement("a-plane");
-        mainPlane.setAttribute("id", `main-plane-${dish.id}`);
+        mainPlane.setAttribute("id", `main-plane-${dish.id}`); //era un -
         mainPlane.setAttribute("position", { x: 0, y: 0, z: 0 });
         mainPlane.setAttribute("rotation", { x: -90, y: 0, z: 0 });
         mainPlane.setAttribute("width", 1.7);
@@ -42,7 +42,7 @@ AFRAME.registerComponent("create-markers", {
   
         // Plano de fondo para el título del platillo
         var titlePlane = document.createElement("a-plane");
-        titlePlane.setAttribute("id", `title-plane-${dish.id}`);
+        titlePlane.setAttribute("id", `title-plane-${dish.id}`); //era un -
         titlePlane.setAttribute("position", { x: 0, y: 0.89, z: 0.02 });
         titlePlane.setAttribute("rotation", { x: 0, y: 0, z: 0 });
         titlePlane.setAttribute("width", 1.69);
@@ -67,7 +67,7 @@ AFRAME.registerComponent("create-markers", {
   
         // Lista de ingredientes.
         var ingredients = document.createElement("a-entity");
-        ingredients.setAttribute("id", `ingredientes-${dish.id}`);
+        ingredients.setAttribute("id", `ingredientes-${dish.id}`); //checar si la base de datos esta en español
         ingredients.setAttribute("position", { x: 0.3, y: 0, z: 0.1 });
         ingredients.setAttribute("rotation", { x: 0, y: 0, z: 0 });
         ingredients.setAttribute("text", {
@@ -75,7 +75,7 @@ AFRAME.registerComponent("create-markers", {
           color: "black",
           width: 2,
           align: "left",
-          value: `${dish.ingredientes.join("\n\n")}`
+          value: `${dish.ingredientes.join("\n\n")}` //checar si la base de datos esta en español
         });
         mainPlane.appendChild(ingredients);
       });
